@@ -20,7 +20,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
-
 #Eureka Client Configuration
 eureka:
   client:
