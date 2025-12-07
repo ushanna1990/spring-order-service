@@ -15,7 +15,7 @@ import java.util.List;
 public class OrderService {
 
     @Autowired
-    public OrderRepository orderRepository;
+    private OrderRepository orderRepository;
 
     public String saveOrder(OrderRequest orderRequest) {
         OrderEntity orderEntity = new OrderEntity();
