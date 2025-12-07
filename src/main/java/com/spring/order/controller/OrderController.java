@@ -13,7 +13,7 @@ import java.util.List;
 public class OrderController {
 
     @Autowired
-    public OrderService orderService;
+    private OrderService orderService;
 
     @PostMapping("/saveOrder")
     public String saveOrder(@RequestBody OrderRequest orderRequest) {
