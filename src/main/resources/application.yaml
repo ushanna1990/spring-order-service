@@ -1,11 +1,8 @@
 server:
   port: 8085
 
+#Database Configuration
 spring:
-  application:
-    name: spring-order-service
-
-  #Database Configuration
   datasource:
     url: jdbc:postgresql://localhost:5432/spring_db
     username: postgres
