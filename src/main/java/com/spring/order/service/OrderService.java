@@ -27,7 +27,17 @@ public class OrderService {
         return "Order saved successfully!";
     }
 
-    public List<OrderResponse> viewOrders() {
+    public OrderResponse viewOrder(Long id) {
+        OrderEntity orderEntity = orderRepository.findById(id).orElse(new OrderEntity());
+        OrderResponse orderResponse = new OrderResponse();
+        orderResponse.setProductId(orderEntity.getProductId());
+        orderResponse.setQuantity(orderEntity.getQuantity());
+        orderResponse.setPrice(orderEntity.getPrice());
+        orderResponse.setProductName(orderEntity.getProductName());
+        return orderResponse;
+    }
+
+    public List<OrderResponse> viewAllOrders() {
         List<OrderResponse> orderResponseList = new ArrayList<>();
         orderRepository.findAll().forEach(orderEntity -> {
             OrderResponse orderResponse = new OrderResponse();
