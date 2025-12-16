@@ -20,6 +20,9 @@ public class OrderController {
         return orderService.saveOrder(orderRequest);
     }
 
-    @GetMapping("/viewOrders")
-    public List<OrderResponse> viewOrders() { return orderService.viewOrders(); }
+    @GetMapping("/viewOrder")
+    public OrderResponse viewOrder(@RequestParam Long id) { return orderService.viewOrder(id); }
+
+    @GetMapping("/viewAllOrders")
+    public List<OrderResponse> viewAllOrders() { return orderService.viewAllOrders(); }
 }
